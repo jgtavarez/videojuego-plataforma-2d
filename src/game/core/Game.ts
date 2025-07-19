@@ -121,7 +121,10 @@ export class Game {
         if (this.gameState !== GameState.PLAYING) return;
 
         // Update player
-        this.player.update(deltaTime, this.inputManager, this.levelManager.getCurrentLevel());
+        const currentLevel = this.levelManager.getCurrentLevel();
+        if (currentLevel) {
+            this.player.update(deltaTime, this.inputManager, currentLevel);
+        }
         
         // Update current level and handle collectibles
         const levelUpdate = this.levelManager.update(deltaTime, this.player);

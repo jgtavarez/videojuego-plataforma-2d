@@ -185,7 +185,7 @@ export class SlimeEnemy extends Enemy {
         this.velocityX = this.speed;
     }
 
-    protected updateAI(deltaTime: number, level: Level): void {
+    protected updateAI(_deltaTime: number, _level: Level): void {
         // Simple back and forth movement
         if (this.aiTimer >= this.directionChangeTime) {
             this.velocityX = -this.velocityX;
@@ -206,7 +206,7 @@ export class GoblinEnemy extends Enemy {
         this.directionChangeTime = 3;
     }
 
-    protected updateAI(deltaTime: number, level: Level): void {
+    protected updateAI(_deltaTime: number, _level: Level): void {
         // More aggressive movement pattern
         if (this.aiTimer >= this.directionChangeTime) {
             this.velocityX = -this.velocityX;
@@ -219,7 +219,7 @@ export class GoblinEnemy extends Enemy {
 // Fly Enemy - Flying enemy
 export class FlyEnemy extends Enemy {
     private isBlue: boolean;
-    private verticalDirection: number = 1;
+    // private verticalDirection: number = 1;
     private verticalSpeed: number = 40;
 
     constructor(x: number, y: number, assetManager: AssetManager, isBlue: boolean = true) {
@@ -236,7 +236,7 @@ export class FlyEnemy extends Enemy {
         this.directionChangeTime = 2.5;
     }
 
-    protected updateAI(deltaTime: number, level: Level): void {
+    protected updateAI(_deltaTime: number, _level: Level): void {
         // Flying movement with vertical bobbing
         if (this.aiTimer >= this.directionChangeTime) {
             this.velocityX = -this.velocityX;
@@ -260,7 +260,7 @@ export class MushroomEnemy extends Enemy {
         this.directionChangeTime = 4;
     }
 
-    protected updateAI(deltaTime: number, level: Level): void {
+    protected updateAI(_deltaTime: number, _level: Level): void {
         // Slow, steady movement
         if (this.aiTimer >= this.directionChangeTime) {
             this.velocityX = -this.velocityX;
@@ -281,7 +281,7 @@ export class WormEnemy extends Enemy {
         this.directionChangeTime = 1.5;
     }
 
-    protected updateAI(deltaTime: number, level: Level): void {
+    protected updateAI(_deltaTime: number, _level: Level): void {
         // Fast, erratic movement
         if (this.aiTimer >= this.directionChangeTime) {
             this.velocityX = -this.velocityX;
@@ -309,7 +309,7 @@ export class BomberGoblinEnemy extends Enemy {
         this.directionChangeTime = 2;
     }
 
-    protected updateAI(deltaTime: number, level: Level): void {
+    protected updateAI(deltaTime: number, _level: Level): void {
         // Boss movement and attack pattern
         if (this.aiTimer >= this.directionChangeTime) {
             this.velocityX = -this.velocityX;

@@ -89,7 +89,7 @@ export class AssetManager {
     }
 
     private async loadImage(name: string, path: string): Promise<void> {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             const img = new Image();
             img.onload = () => {
                 this.images.set(name, img);

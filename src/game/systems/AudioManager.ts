@@ -51,18 +51,18 @@ export class AudioManager {
         });
     }
 
-    private createAudio(src: string, loop: boolean = false): HTMLAudioElement {
-        const audio = new Audio(src);
-        audio.loop = loop;
-        audio.preload = 'auto';
-        
-        // Handle loading errors gracefully
-        audio.addEventListener('error', () => {
-            console.warn(`Failed to load audio: ${src}`);
-        });
-        
-        return audio;
-    }
+    // private createAudio(src: string, loop: boolean = false): HTMLAudioElement {
+    //     const audio = new Audio(src);
+    //     audio.loop = loop;
+    //     audio.preload = 'auto';
+    //     
+    //     // Handle loading errors gracefully
+    //     audio.addEventListener('error', () => {
+    //         console.warn(`Failed to load audio: ${src}`);
+    //     });
+    //     
+    //     return audio;
+    // }
 
     // Music controls
     playBackgroundMusic(): void {

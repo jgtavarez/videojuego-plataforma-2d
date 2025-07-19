@@ -2,7 +2,7 @@ export class HUD {
     private lives: number = 3;
     private score: number = 0;
     private level: number = 1;
-    private canvas: HTMLCanvasElement | null = null;
+    // private canvas: HTMLCanvasElement | null = null;
     
     // HUD layout constants
     private readonly MARGIN = 20;

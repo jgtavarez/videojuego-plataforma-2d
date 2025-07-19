@@ -1,4 +1,4 @@
-import { AssetManager, SpriteAnimation } from '../core/AssetManager';
+import { AssetManager } from '../core/AssetManager';
 import { InputManager, InputState } from '../core/InputManager';
 import { Level } from '../levels/Level';
 import { PhysicsBody } from '../systems/Physics';
@@ -115,7 +115,7 @@ export class Player {
         }
     }
 
-    private handleInput(input: InputState, deltaTime: number): void {
+    private handleInput(input: InputState, _deltaTime: number): void {
         if (this.isAttacking) return;
         
         // Allow some movement during hit state, but with reduced control

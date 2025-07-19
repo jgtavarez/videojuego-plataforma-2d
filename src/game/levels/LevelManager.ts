@@ -247,7 +247,7 @@ export class LevelManager {
 
         // Check enemy collisions
         const collidedEnemies = this.currentLevel.checkEnemyCollisions(player.getPhysicsBody());
-        collidedEnemies.forEach(enemy => {
+        collidedEnemies.forEach(_enemy => {
             if (!player.isInvulnerable()) {
                 player.takeDamage(1);
             }
