@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platformer Adventure</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #222;
+            color: white;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        #gameContainer {
+            position: relative;
+            border: 2px solid #444;
+        }
+        
+        #gameCanvas {
+            display: block;
+            background: #87CEEB;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+        
+        #menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+        
+        .menu-title {
+            font-size: 48px;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .menu-button {
+            background: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .menu-button:hover {
+            background: #45a049;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        #gameOverMenu {
+            background: rgba(139, 0, 0, 0.9);
+        }
+        
+        #gameOverMenu .menu-title {
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="1024" height="576"></canvas>
+        
+        <!-- Main Menu -->
+        <div id="menu" class="menu">
+            <h1 class="menu-title">PLATFORMER ADVENTURE</h1>
+            <button id="startButton" class="menu-button">COMENZAR JUEGO</button>
+            <div style="margin-top: 20px; font-size: 14px; text-align: center;">
+                <p>Usa WASD o flechas para moverte</p>
+                <p>ESPACIO para saltar, X para atacar</p>
+            </div>
+        </div>
+        
+        <!-- Game Over Menu -->
+        <div id="gameOverMenu" class="menu hidden">
+            <h1 class="menu-title">¡HAS MUERTO!</h1>
+            <p style="font-size: 18px; margin-bottom: 30px;">El héroe ha caído en su aventura</p>
+            <button id="restartButton" class="menu-button">REINTENTAR</button>
+            <button id="mainMenuButton" class="menu-button">MENÚ PRINCIPAL</button>
+        </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html> 
